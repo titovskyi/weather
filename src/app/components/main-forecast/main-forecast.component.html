@@ -59,9 +59,6 @@
           </ng-template>
           <div class="container">
             <app-wind-forecast></app-wind-forecast>
-            <!-- <ul>
-              <li *ngFor="let wind of sixteenForecast">{{ wind.wind_spd }}</li>
-            </ul> -->
           </div>
         </tab>
         <tab >
@@ -69,27 +66,18 @@
             <span>Temperature</span>
           </ng-template>
           <app-temp-forecast></app-temp-forecast>
-          <!-- <div class="container">
-            <li *ngFor="let temp of sixteenForecast">{{ temp.temp }}</li>
-          </div> -->
         </tab>
         <tab>
           <ng-template tabHeading >
             <span>Presure</span>
           </ng-template>
           <app-presure-forecast></app-presure-forecast>
-          <!-- <div class="container">
-            <li *ngFor="let pres of sixteenForecast">{{ pres.pres }}</li>
-          </div> -->
         </tab>
         <tab>
           <ng-template tabHeading >
             <span>Humidity</span>
           </ng-template>
           <app-humidity-forecast></app-humidity-forecast>
-          <!-- <div class="container">
-            <li *ngFor="let rh of sixteenForecast">{{ rh.rh }}</li>
-          </div> -->
         </tab>
     </tabset>
 
