@@ -1,0 +1,84 @@
+.container {
+  .day_today {
+    font-size: 1.4rem;
+    text-align: left;
+    font-weight: 600;
+    margin-top: 1rem;
+  }
+  .main_info {
+    .city_name, .sun, .temp {
+      text-align: center;
+    }
+    .city_name {
+      font-size: 2.5rem;
+      display: flex;
+      justify-content: center;
+      .city {
+        margin-right: 0.5rem;
+      }
+    }
+    .temp {
+      text-align: center;
+      font-size: 3.5rem;
+      font-weight: 600;
+    }
+    .sun {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      div {
+        margin: 0 0.2rem;
+        img {
+          width: 2.6rem;
+          height: 2.6rem;
+        }
+      }
+    }
+  }
+}
+.wrap {
+  background-color: rgb(245, 245, 245);
+  .all_info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 1.2rem;
+    background-color: rgb(245, 245, 245);
+    padding: 0.5rem 0;
+    p {
+      margin: 0 0.5rem;
+      span {
+        font-weight: 700;
+      }
+    }
+  }
+}
+.wrapper {
+  padding: 0;
+  .header_forecast {
+    font-size: 2.5rem;
+    margin-top: 2rem;
+  }
+  tabset {
+    .nav-tabs {
+      .nav-item {
+        .nav-link {
+          border: 1px solid #dee2e6;
+          font-size: 1.2rem;
+          color: black;
+          border-radius: 0;
+        }
+        .active {
+          background-color: rgb(245, 245, 245);
+          font-weight: 800;
+        }
+      }
+    }
+    .tab-content {
+      background-color: rgb(245, 245, 245);
+    }
+  }
+}

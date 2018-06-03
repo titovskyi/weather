@@ -1,0 +1,95 @@
+<div class="container">
+  <div class="day_today">{{ dailyForecast[0]?.ob_time | date:' EEEE, d MMMM ':'UTC':'en' }}</div>
+  <div class="main_info">
+    <div class="city_name">
+      <div class="city">{{ dailyForecast[0]?.city_name }}, </div>
+      <div class="country">{{ dailyForecast[0]?.country_code }}</div>
+    </div>
+    <div class="temp">
+      {{ dailyForecast[0]?.temp }}° C
+    </div>
+    <div class="sun">
+      <div>
+        <ng-container *ngIf="stormy; then t1"></ng-container>
+        <ng-container *ngIf="snowy; then t2"></ng-container>
+        <ng-container *ngIf="rainy; then t3"></ng-container>
+        <ng-container *ngIf="misty; then t4"></ng-container>
+        <ng-container *ngIf="sunny; then t5"></ng-container>
+        <ng-container *ngIf="cloudy; then t6"></ng-container>
+        <ng-template #t1>
+            <img src="../../../assets/stormy-weather.png" alt="stormy-weather">
+        </ng-template>
+        <ng-template #t2>
+            <img src="../../../assets/light-snow.png" alt="sun">
+        </ng-template>
+        <ng-template #t3>
+            <img src="../../../assets/rain.png" alt="light-snow">
+        </ng-template>
+        <ng-template #t4>
+            <img src="../../../assets/mist.png" alt="mist">
+        </ng-template>
+        <!-- Else Statement -->
+        <ng-template #t5>
+            <img src="../../../assets/logo-sun.png" alt="sun">
+        </ng-template>
+        <ng-template #t6>
+            <img src="../../../assets/clouds.png" alt="clouds">
+        </ng-template>
+      </div>
+      <div>{{ dailyForecast[0]?.weather.description }}</div>
+    </div>
+  </div>
+</div>
+<div class="container wrap">
+    <div class="all_info">
+        <p class="pressure"><span>Pressure:</span> {{ dailyForecast[0]?.pres }}</p>
+        <p class="humidity"><span>Humidity:</span> {{ dailyForecast[0]?.rh }}</p>
+        <p class="wind"><span>Wind Speed:</span> {{ dailyForecast[0]?.wind_spd }} m/s</p>
+        <p class="clouds"><span>Clouds:</span> {{ dailyForecast[0]?.clouds }} %</p>
+      </div>
+</div>
+<div class="container wrapper">
+  <div class="header_forecast"><p>Forecast 16 days</p></div>
+</div>
+<div class="container wrapper">
+    <tabset class="mytabset">
+        <tab>
+          <ng-template tabHeading >
+            <span>Wind</span>
+          </ng-template>
+          <div class="container">
+            <app-wind-forecast></app-wind-forecast>
+            <!-- <ul>
+              <li *ngFor="let wind of sixteenForecast">{{ wind.wind_spd }}</li>
+            </ul> -->
+          </div>
+        </tab>
+        <tab >
+          <ng-template tabHeading >
+            <span>Temperature</span>
+          </ng-template>
+          <app-temp-forecast></app-temp-forecast>
+          <!-- <div class="container">
+            <li *ngFor="let temp of sixteenForecast">{{ temp.temp }}</li>
+          </div> -->
+        </tab>
+        <tab>
+          <ng-template tabHeading >
+            <span>Presure</span>
+          </ng-template>
+          <app-presure-forecast></app-presure-forecast>
+          <!-- <div class="container">
+            <li *ngFor="let pres of sixteenForecast">{{ pres.pres }}</li>
+          </div> -->
+        </tab>
+        <tab>
+          <ng-template tabHeading >
+            <span>Humidity</span>
+          </ng-template>
+          <app-humidity-forecast></app-humidity-forecast>
+          <!-- <div class="container">
+            <li *ngFor="let rh of sixteenForecast">{{ rh.rh }}</li>
+          </div> -->
+        </tab>
+    </tabset>
+
