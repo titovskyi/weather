@@ -7,12 +7,13 @@
       </div>
       <div class="col-auto"></div>
       <div class="col-12 col-sm-5 col-md-5 col-lg-5 col-xl-5 search">
-        <input [(ngModel)]="selectedValue"
-        [typeahead]="states"
-        typeaheadOptionField="name"
-        (typeaheadOnSelect)="onSelect($event)"
-        class="form-control my_search"
-        placeholder="City">
+          <input [(ngModel)]="selectedValue"
+          [typeahead]="states"
+          typeaheadOptionField="name"
+          (typeaheadOnSelect)="onSelect($event)"
+          (keydown)="onSubmit($event)"
+          class="form-control my_search"
+          placeholder="City">
       </div>
     </div>
   </div>

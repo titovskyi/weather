@@ -72,4 +72,11 @@ export class AppComponent {
     // this.selectedOption = event.item.name;
     this.forecast.getCity(event.item.name);
   }
+  onSubmit(event): void {
+  	if(event.keyCode == 13) {
+  		console.log('sss');
+  		this.forecast.getCity(event.target.value);
+	  	// this.forecast.getCity(event.target.value);
+  	}
+  }
 }
