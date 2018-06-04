@@ -61,23 +61,23 @@
             <app-wind-forecast></app-wind-forecast>
           </div>
         </tab>
-        <tab >
+        <tab (select)="getTab2()">
           <ng-template tabHeading >
             <span>Temperature</span>
           </ng-template>
-          <app-temp-forecast></app-temp-forecast>
+          <app-temp-forecast *ngIf="tab2Loaded"></app-temp-forecast>
         </tab>
-        <tab>
+        <tab (select)="getTab3()">
           <ng-template tabHeading >
             <span>Presure</span>
           </ng-template>
-          <app-presure-forecast></app-presure-forecast>
+          <app-presure-forecast *ngIf="tab3Loaded"></app-presure-forecast>
         </tab>
-        <tab>
+        <tab (select)="getTab4()">
           <ng-template tabHeading >
             <span>Humidity</span>
           </ng-template>
-          <app-humidity-forecast></app-humidity-forecast>
+          <app-humidity-forecast *ngIf="tab4Loaded"></app-humidity-forecast>
         </tab>
     </tabset>
 

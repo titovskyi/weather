@@ -14,6 +14,9 @@ export class MainForecastComponent implements OnInit {
 
   public dailyForecast = [];
   public sixteenForecast = [];
+  public tab2Loaded = false;
+  public tab3Loaded = false;
+  public tab4Loaded = false;
 
   public lightRain = [
   'r01d', 'r01n', 'r02d', 'r02n', 'r03d', 'r03n', 'f01d',
@@ -65,13 +68,15 @@ export class MainForecastComponent implements OnInit {
     );
   }
 
-  // public getSixteenDays() {
-  //   this.forecast.getForecast().subscribe(
-  //     sixteenForecast => {
-  //       this.sixteenForecast = sixteenForecast;
-  //       console.log(sixteenForecast);
-  //     }
-  //   );
-  // }
+  getTab2() {
+    this.tab2Loaded = true;
+  }
 
+  getTab3() {
+    this.tab3Loaded = true;
+  }
+
+  getTab4() {
+    this.tab4Loaded = true;
+  }
 }
